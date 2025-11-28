@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Edit Borrow Record{% endblock %}
+
+{% block content %}
+<div class="card shadow">
+    <div class="card-header bg-warning text-dark">
+        <h5>Edit Borrow Record</h5>
+    </div>
+    <div class="card-body">
+        <p><strong>Book:</strong> {{ borrow.book.title }}</p>
+        <p><strong>Student:</strong> {{ borrow.student.name }} ({{ borrow.student.erp_id }})</p>
+        <p><strong>Borrowed:</strong> {{ borrow.borrow_date.strftime('%d %B %Y') }}</p>
+        <p><strong>Due:</strong> {{ borrow.due_date.strftime('%d %B %Y') }}</p>
+
+        <form method="POST">
+            <div class="mb-3">
+                <label>Return Date (leave empty if not returned)</label>
+                <input type="date" name="return_date" class="form-control" 
+                       value="{{ borrow.return_date.strftime('%Y-%m-%d') if borrow.return_date else '' }}">
+            </div>
+            <div class="d-flex gap-2">
+                <a href="{{ url_for('history') }}" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-success">Update Record</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    transition: all 0.3s ease;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
+/* GENERAL */
+body { background: #f8fafc; }
+
+/* small stat cards */
+.small-stat { border-radius: 12px; }
+
+/* search input */
+.search-input {
+  border-left: 0;
+  border-right: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* card hover / lift effect */
+.card-hover {
+  border-radius: 10px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(13,110,253,0.08);
+}
+
+/* tighter card title */
+.card-title {
+  font-weight: 700;
+  color: #0d6efd; /* bootstrap primary */
+  font-size: 1.05rem;
+}
+
+/* badges */
+.badge {
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+}
+
+/* small screens spacing fix */
+@media (max-width: 575px) {
+  .search-input { font-size: 0.95rem; }
+}
+
+/* optional: make outline buttons softer */
+.btn-outline-light {
+  border-color: rgba(255,255,255,0.15);
+}
