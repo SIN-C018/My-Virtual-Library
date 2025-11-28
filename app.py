@@ -45,10 +45,10 @@ class Borrow(db.Model):
 # all seven routes are start from here
 
           
-@app.before_request
-def require_login():
-    if request.endpoint not in ('login', 'static') and not session.get('logged_in'):
-        return redirect(url_for('login'))
+# @app.before_request
+# def require_login():
+#     if request.endpoint not in ('login', 'static') and not session.get('logged_in'):
+#         return redirect(url_for('login'))
     
 @app.route('/')
 def index():
